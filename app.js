@@ -30,11 +30,17 @@ function shuffle(a) {
 shuffle(songTitles);
 
 var selectedSong = songTitles.pop();
-document.getElementById("playedSong").innerHTML = "The song to be played is " + selectedSong.toString();
-
 var wrongSongs = songTitles.slice(0,3);
-document.getElementById("choice1").innerHTML = "The wrong answers are " + wrongSongs.toString();
-
+console.log("Correct Song: " + selectedSong);
+console.log("Wrong Choices: " + wrongSongs.toString());
 var songChoices = wrongSongs.push(selectedSong);
 songChoices = shuffle(wrongSongs);
-document.getElementById("choice2").innerHTML = "The possible choices are " + songChoices.toString();
+console.log("Options Seen By Player: " + songChoices.toString());
+
+
+document.getElementById("playedSong").innerHTML = "The song to be played is " + selectedSong;
+
+document.getElementById("choice1").innerHTML = "1. " + wrongSongs[0];
+document.getElementById("choice2").innerHTML = "2. " + wrongSongs[1];
+document.getElementById("choice3").innerHTML = "3. " + wrongSongs[2];
+document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3];
