@@ -1,3 +1,26 @@
+QUESTIONS:
+  What keys should it map to?
+  Toggle to play/pause, or play while held?
+  Song files?
+
+SUCCESSES:
+  Randomize songs and options
+  Populate HTML
+  Remove songs from array
+  Event listener for answers
+  Silence listener (prevent repeated guesses)
+  Check player guess
+
+  Music player
+  Play/pause buttons
+  Toggle play/pause
+  Hold to play button
+  Elapsed time of listening
+
+https://codepen.io/syoustra/pen/ebwpbX ~ Quiz Template playground
+https://codepen.io/syoustra/pen/ZwGvEL ~ Music Player playground
+
+========================================================
 
 Layout:
   ASCII Text for DoScience, SWAT, Name That Tune, etc.
@@ -56,7 +79,7 @@ REPEAT FOR EACH QUESTION:
     Increment Question Number
 
 
-=================================================
+========================================================
 HTML IDs NEEDED:
   option1, option2, option3, option4 ~ answer choices
   playedSong ~ the correct song to be played/guessed
@@ -86,6 +109,7 @@ FUNCTIONS NEEDED:
   .push() ~ adds correct song into answer options array
   document.getElementById("").innerHTML = ""; ~ writes JavaScript to the DOM
   listenForKeypress() ~ listens for player guesses
+  playerInput() ~ inner function for event listener
   checkGuess() ~ checks player guess for correct/incorrect
   playSong() ~ plays song
   pauseSong() ~ pauses song
@@ -96,7 +120,7 @@ FUNCTIONS NEEDED:
 
 
 
-=================================================
+========================================================
 
 array of songs
 pull selectedSong and splice
