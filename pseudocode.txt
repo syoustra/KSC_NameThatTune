@@ -31,6 +31,7 @@ REPEAT FOR EACH QUESTION:
         Play/Pause button displays "Pause"
       While Paused:
         Second timer tracks elapsed guessing time
+       ????SHUFFLE ANSWER CHOICES????????
         Answer options are revealed
         Music does not play
         Play/Pause button displays "Play"
@@ -53,6 +54,42 @@ REPEAT FOR EACH QUESTION:
     Save/Display score
     Clear screen
     Increment Question Number
+
+
+=================================================
+HTML IDs NEEDED:
+  option1, option2, option3, option4 ~ answer choices
+  playedSong ~ the correct song to be played/guessed
+  musicPlayer ~ overall audio player
+  songSource ~ URL for the song to be played
+  playerState ~ displays whether the song is playing or paused
+  timePlayed ~ displays the elapsed time of the song
+
+
+VARIABLES NEEDED:
+  songTitles[] ~ array of available songs to choose from
+  selectedSong ~ the correct song
+  wrongAnswers[] ~ array of the wrong answers
+  songChoices[] ~ array of the answer options, with both correct and wrong songs
+  playerGuess ~ the player's guess as represented by the keypress
+  guessedSong ~ the actual song of the player's guess
+  songURL ~ the URL for the song to be played
+  musicPlayer ~ connects to overall audio player in DOM
+  songToPlay ~ shorthand connection to audio player songSource in DOM (songToPlay.src = )
+  songTimer ~ elapsed playing time of song (musicPlayer.currentTime)
+
+
+FUNCTIONS NEEDED:
+  shuffle() ~ shuffles elements of an array (both the total array and then answer options)
+  .pop() ~ selects and removes the correct song from the total array
+  .slice() ~ selects three other random wrong songs as answer options
+  .push() ~ adds correct song into answer options array
+  document.getElementById("").innerHTML = ""; ~ writes JavaScript to the DOM
+  listenForKeypress() ~ listens for player guesses
+  checkGuess() ~ checks player guess for correct/incorrect
+  playSong() ~ plays song
+  pauseSong() ~ pauses song
+  toggleSong() ~ toggles play/pause of song with single button
 
 
 
