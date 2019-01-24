@@ -1,4 +1,62 @@
 
+Layout:
+  ASCII Text for DoScience, SWAT, Name That Tune, etc.
+  Play/pause button?
+  Song/Question Number
+  Options/Answer Choices (hidden/visible)
+  Score
+  High Score(s)?
+
+Initial Set-up Screen:
+  Instructions
+  Array of songs reset
+  Score reset
+  Screen reset
+
+
+REPEAT FOR EACH QUESTION:
+  Question Set-Up:
+    Randomly select right and wrong songs
+    Delete correct song from array
+    Assign appropriate song URL
+    Shuffle answer choices
+    Assign answer choices to option slots
+
+  REPEAT AS NEEDED UNTIL CORRECT:
+    Listening Phase:
+      While Playing:
+        Timer tracks elapsed listening time
+        Answer options are hidden
+        Music plays
+        Play/Pause button displays "Pause"
+      While Paused:
+        Second timer tracks elapsed guessing time
+        Answer options are revealed
+        Music does not play
+        Play/Pause button displays "Play"
+
+    ???ALWAYS LISTENING FOR GUESSES? OR JUST LISTEN WITH PAUSE?
+
+    Guessing Phase:
+      Listen for keypress/guess
+      Check if keypress is correct
+        if correct
+          praise
+          "any key for next question"
+        if incorrect
+          sad trombone
+          hide options
+          "press play to listen more"
+
+  Question Transition:
+    Clear songs and options
+    Save/Display score
+    Clear screen
+    Increment Question Number
+
+
+
+
 
 
 =================================================
