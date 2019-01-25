@@ -34,7 +34,9 @@
  -->
     <p>Name That Tune!</p>
     <p id="playedSong"></p>
-    <p>Press 'p' to toggle music on/off .... hold/release space to play/pause .... 1-4 to guess .... q to quit</p>
+    <p id="instructions">Press 'p' to toggle music on/off .... hold/release space to play/pause .... 1-4 to guess .... q to quit</p>
+    <p id="questionNumber"></p>
+    <p id="score"></p>
     <div id=choiceListingDiv>
         <p>Your Choices Are .....</p>
         <p id="choice1"></p>
@@ -45,8 +47,8 @@
 
 
     <!--MUSIC PLAYER-->
-
-    <audio id="musicPlayer">
+    <div id="musicPlayerDiv">
+        <audio id="musicPlayer">
         <!--   <source src="horse.ogg" type="audio/ogg"> -->
           <source id="songSource" src="" type="audio/mpeg">
             <!-- Your browser does not support the audio element. -->
@@ -54,6 +56,7 @@
 
         <p id="playerState"></p>
         <p id="timePlayed"></p>
+    </div>
 <!--         <button onclick="playSong()" type="button">Play</button>
         <button onclick="pauseSong()" type="button">Pause</button>
         <button onclick="toggleSong()" type="button">Toggle</button>

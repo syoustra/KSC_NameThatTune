@@ -86,6 +86,9 @@ REPEAT FOR EACH QUESTION:
 ========================================================
 HTML IDs NEEDED:
   option1, option2, option3, option4 ~ answer choices
+  instructions ~ playing/input instructions
+  questionsAsked ~ placeholder for number of questions asked
+  score ~ placeholder for score
   choiceListingDiv ~ div containing all the choices, for easy hide/show
   playedSong ~ the correct song to be played/guessed
   musicPlayer ~ overall audio player
@@ -109,6 +112,7 @@ VARIABLES NEEDED:
   questionsAsked ~ number of questions asked so far
   questionTotal ~ total number of questions to ask
   winLoseText ~ message to display when winning or losing
+  score ~ score
 
 
 FUNCTIONS NEEDED:

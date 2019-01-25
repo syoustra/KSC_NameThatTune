@@ -82,6 +82,8 @@ function nextQuestion() {
   //Display the song options
   // document.getElementById("playedSong").innerHTML = "The song to be played is " + selectedSong + " with file located at " + songURL;
 
+  document.getElementById("choiceListingDiv").style.visibility = "hidden";
+
   document.getElementById("choice1").innerHTML = "1. " + wrongSongs[0];
   document.getElementById("choice2").innerHTML = "2. " + wrongSongs[1];
   document.getElementById("choice3").innerHTML = "3. " + wrongSongs[2];
@@ -259,7 +261,15 @@ function moreQuestions() {
     nextQuestion();
   } else {
     document.getElementById("playedSong").innerHTML = "Thanks for playing!";
+    removeElement("choiceListingDiv");
+    removeElement("musicPlayerDiv");
+    document.getElementById("instructions").innerHTML = "Please press q to play again";
   }
 }
 
+function removeElement(elementId) {
+    // Removes an element from the document
+    var element = document.getElementById(elementId);
+    element.parentNode.removeChild(element);
+}
 
