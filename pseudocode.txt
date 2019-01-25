@@ -22,6 +22,7 @@ SUCCESSES:
 https://codepen.io/syoustra/pen/ebwpbX ~ Quiz Template playground
 https://codepen.io/syoustra/pen/ZwGvEL ~ Music Player playground
 https://codepen.io/syoustra/pen/OdyExb ~ Writing to DOM playground
+https://codepen.io/syoustra/pen/JxYwVa ~ ASCII Art playground
 
 ========================================================
 

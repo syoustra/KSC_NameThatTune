@@ -12,6 +12,11 @@ var songTitles = [
 ];
 // console.log(songTitles);
 
+// var selectedSong = songTitles[Math.floor(Math.random() * songTitles.length)];
+// console.log(selectedSong);
+
+// document.getElementById("playedSong").innerHTML = "Can you guess " + selectedSong + "?";
+
 
 //shuffle formula from https://alvinalexander.com/source-code/javascript-multiple-random-unique-elements-from-array
 function shuffle(a) {
@@ -71,6 +76,7 @@ function nextQuestion() {
   }
 
   getSongURL(selectedSong);
+  // alert(songURL);
 
   //Display the song options
   document.getElementById("playedSong").innerHTML = "The song to be played is " + selectedSong + " with file located at " + songURL;
@@ -80,7 +86,21 @@ function nextQuestion() {
   document.getElementById("choice3").innerHTML = "3. " + wrongSongs[2];
   document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3];
 
- 
+  //Listen for player guesses
+  // window.addEventListener("keydown", checkKeyPressed);
+
+  // function checkKeyPressed(e) {
+  //     if (e.keyCode == "49") {
+  //         alert("Option 1 is selected");
+  //     } else if (e.keyCode == "50") {
+  //         alert("Option 2 is selected");
+  //     } else if (e.keyCode == "51") {
+  //         alert("Option 3 is selected");
+  //     } else if (e.keyCode == "52") {
+  //         alert("Option 4 is selected");
+  //     }
+  // }
+
 
 // -------------------------------------------------------------- MUSIC PLAYER------------------------//
 var musicPlayer;
@@ -94,35 +114,35 @@ songToPlay.src = songURL;
 musicPlayer = document.getElementById("musicPlayer");
 musicPlayer.load();
 
-// songTimer = 0;
-// function playSong() {
-//   musicPlayer.play();
+songTimer = 0;
+function playSong() {
+  musicPlayer.play();
 
-//  document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
-//   document.getElementById("timePlayed").style.visibility = "hidden";
-// }
+ document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
+  document.getElementById("timePlayed").style.visibility = "hidden";
+}
 
-// function pauseSong() {
-//   musicPlayer.pause();
-//   songTimer = musicPlayer.currentTime;
+function pauseSong() {
+  musicPlayer.pause();
+  songTimer = musicPlayer.currentTime;
   
-//   document.getElementById("timePlayed").innerHTML = "You listened to this song for " + songTimer + " seconds.";
-//     document.getElementById("timePlayed").style.visibility = "visible";
+  document.getElementById("timePlayed").innerHTML = "You listened to this song for " + songTimer + " seconds.";
+    document.getElementById("timePlayed").style.visibility = "visible";
 
 
-//   document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
-// }
+  document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
+}
 
-// function toggleSong() {
-//   if (musicPlayer.paused) {
-//     playSong();
-//   document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
-//   } else {
-//     pauseSong();
-//     document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
-//   }
+function toggleSong() {
+  if (musicPlayer.paused) {
+    playSong();
+  document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
+  } else {
+    pauseSong();
+    document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
+  }
  
-// }
+}
 
 
 addEventListener("keydown", function(event) {
@@ -133,6 +153,16 @@ addEventListener("keydown", function(event) {
     if (event.key == " ")
       pauseSong();
   });
+
+  addEventListener("keydown", function(event) {
+    if (event.key == "p")
+      toggleSong();
+  })
+
+  addEventListener("keydown", function(event) {
+    if (event.key == "q")
+      location.reload(true);
+  })
 // -------------------------------------------------------------- MUSIC PLAYER------------------------//
 
 
@@ -142,6 +172,7 @@ addEventListener("keydown", function(event) {
   var playerGuess;
   // function checkGuess(playerGuess);
   function listenForKeypress() {
+
     window.onkeydown = function(e) {
       switch (e.keyCode) {
         case 49:
@@ -207,33 +238,3 @@ function moreQuestions() {
 }
 
 
-
-songTimer = 0;
-function playSong() {
-  musicPlayer.play();
-
- document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
-  document.getElementById("timePlayed").style.visibility = "hidden";
-}
-
-function pauseSong() {
-  musicPlayer.pause();
-  songTimer = musicPlayer.currentTime;
-  
-  document.getElementById("timePlayed").innerHTML = "You listened to this song for " + songTimer + " seconds.";
-    document.getElementById("timePlayed").style.visibility = "visible";
-
-
-  document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
-}
-
-function toggleSong() {
-  if (musicPlayer.paused) {
-    playSong();
-  document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
-  } else {
-    pauseSong();
-    document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
-  }
- 
-}
