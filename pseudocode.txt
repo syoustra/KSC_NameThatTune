@@ -104,6 +104,8 @@ VARIABLES NEEDED:
   songToPlay ~ shorthand connection to audio player songSource in DOM (songToPlay.src = )
   songTimer ~ elapsed playing time of song (musicPlayer.currentTime)
   placeholder, textToWrite ~ shortcut for writeToDom(placeholder, textToWrite)
+  questionsAsked ~ number of questions asked so far
+  questionTotal ~ total number of questions to ask
 
 
 FUNCTIONS NEEDED:
@@ -119,6 +121,8 @@ FUNCTIONS NEEDED:
   playSong() ~ plays song
   pauseSong() ~ pauses song
   toggleSong() ~ toggles play/pause of song with single button
+  nextQuestion() ~ prepares/runs entire question process
+  moreQuestions() ~ checks to see if there are more questions to be asked
 
 
 
