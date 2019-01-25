@@ -114,69 +114,36 @@ songToPlay.src = songURL;
 musicPlayer = document.getElementById("musicPlayer");
 musicPlayer.load();
 
-songTimer = 0;
-function playSong() {
-  musicPlayer.play();
-//   var i=0,songTimer=setInterval(function(){i++},1000);
+// songTimer = 0;
+// function playSong() {
+//   musicPlayer.play();
+
+//  document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
+//   document.getElementById("timePlayed").style.visibility = "hidden";
+// }
+
+// function pauseSong() {
+//   musicPlayer.pause();
+//   songTimer = musicPlayer.currentTime;
   
-  
-  // setInterval(function () {
-  //   songTimer++;
-  // }, 1000);
-  document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
-  document.getElementById("timePlayed").style.visibility = "hidden";
-}
-
-function pauseSong() {
-  musicPlayer.pause();
-  songTimer = musicPlayer.currentTime;
-  
-  document.getElementById("timePlayed").innerHTML = "You listened to this song for " + songTimer + " seconds.";
-    document.getElementById("timePlayed").style.visibility = "visible";
+//   document.getElementById("timePlayed").innerHTML = "You listened to this song for " + songTimer + " seconds.";
+//     document.getElementById("timePlayed").style.visibility = "visible";
 
 
-  document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
-}
+//   document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
+// }
 
-function toggleSong() {
-  if (musicPlayer.paused) {
-    playSong();
-  document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
-  } else {
-    pauseSong();
-    document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
-  }
- 
-}
-
-// function nextSong() {
-//   pauseSong();
-//   if (songToPlay.src == "http://www.mariomayhem.com/downloads/sound_tracks/Legend_of_Zelda_Ocarina_of_Time_ost/01%20Title%20Theme.mp3") {
-//     pauseSong();
-//     songToPlay.src = songUrl2;
+// function toggleSong() {
+//   if (musicPlayer.paused) {
 //     playSong();
+//   document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
 //   } else {
 //     pauseSong();
-//     songToPlay.src = songUrl1;
-//     playSong();
+//     document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
 //   }
+ 
 // }
 
-// document.getElementById("timePlayed").innerHTML = "The song has been playing for " + songTimer * 1000 + " seconds.";
-
-
-
-// function listenForKeypress() {
-//   window.onkeydown = function(e) {
-//     if (e.keyCode == "49") {
-//       playSong();
-//     } else {
-//       pauseSong();
-//     }
-//   };
-// }
-
-// listenForKeypress();
 
 addEventListener("keydown", function(event) {
     if (event.key == " ")
@@ -260,3 +227,32 @@ function moreQuestions() {
 }
 
 
+songTimer = 0;
+function playSong() {
+  musicPlayer.play();
+
+ document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
+  document.getElementById("timePlayed").style.visibility = "hidden";
+}
+
+function pauseSong() {
+  musicPlayer.pause();
+  songTimer = musicPlayer.currentTime;
+  
+  document.getElementById("timePlayed").innerHTML = "You listened to this song for " + songTimer + " seconds.";
+    document.getElementById("timePlayed").style.visibility = "visible";
+
+
+  document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
+}
+
+function toggleSong() {
+  if (musicPlayer.paused) {
+    playSong();
+  document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
+  } else {
+    pauseSong();
+    document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
+  }
+ 
+}
