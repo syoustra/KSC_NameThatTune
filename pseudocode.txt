@@ -108,6 +108,7 @@ VARIABLES NEEDED:
   placeholder, textToWrite ~ shortcut for writeToDom(placeholder, textToWrite)
   questionsAsked ~ number of questions asked so far
   questionTotal ~ total number of questions to ask
+  winLoseText ~ message to display when winning or losing
 
 
 FUNCTIONS NEEDED:
@@ -115,6 +116,7 @@ FUNCTIONS NEEDED:
   .pop() ~ selects and removes the correct song from the total array
   .slice() ~ selects three other random wrong songs as answer options
   .push() ~ adds correct song into answer options array
+  displaySongChoices ~ writes the possible answers to the DOM
   document.getElementById("").innerHTML = ""; ~ writes JavaScript to the DOM
   writeToDom() ~ DRY function for printing text to screen
   listenForKeypress() ~ listens for player guesses

@@ -27,6 +27,7 @@ function shuffle(a) {
   return a;
 }
 
+var winLoseText;
 var questionTotal;
 var questionsAsked;
 questionsAsked = 0;
@@ -79,7 +80,7 @@ function nextQuestion() {
   // alert(songURL);
 
   //Display the song options
-  document.getElementById("playedSong").innerHTML = "The song to be played is " + selectedSong + " with file located at " + songURL;
+  // document.getElementById("playedSong").innerHTML = "The song to be played is " + selectedSong + " with file located at " + songURL;
 
   document.getElementById("choice1").innerHTML = "1. " + wrongSongs[0];
   document.getElementById("choice2").innerHTML = "2. " + wrongSongs[1];
@@ -207,22 +208,32 @@ addEventListener("keydown", function(event) {
     console.log(playerGuess);
     var guessedSong = songChoices[playerGuess-1];
     console.log(guessedSong);
-    if (guessedSong == selectedSong) {
-      alert("YOU WIN!!!!!");
-      document.getElementById("choice1").innerHTML = "1. By the Power";
-      document.getElementById("choice2").innerHTML = "2. of Greyskull...";
-      document.getElementById("choice3").innerHTML = "3. You are the";
-      document.getElementById("choice4").innerHTML = "4. Winner!!!!!";
+    if (guessedSong != selectedSong) {
+      // alert("YOU WIN!!!!!");
+      document.getElementById("choiceListingDiv").style.visibility = "hidden";
+      winLoseText = "Oops, try again!"
+      console.log(winLoseText);
+
+
+      // document.getElementById("choice1").innerHTML = "1. By the Power";
+      // document.getElementById("choice2").innerHTML = "2. of Greyskull...";
+      // document.getElementById("choice3").innerHTML = "3. You are the";
+      // document.getElementById("choice4").innerHTML = "4. Winner!!!!!";
 
     } else {
-      alert("*sad trombone*");
+      // alert("*sad trombone*");
+      document.getElementById("choiceListingDiv").style.visibility = "hidden";
+      winLoseText = "That's right! That was " + selectedSong + "!";
+      console.log(winLoseText);
+
       document.getElementById("choice1").innerHTML = "1. I";
       document.getElementById("choice2").innerHTML = "2. Pity";
       document.getElementById("choice3").innerHTML = "3. The";
       document.getElementById("choice4").innerHTML = "4. Fool....";
     }
     questionsAsked++;
-    alert(questionsAsked);
+    // alert(questionsAsked);
+    document.getElementById("playedSong").innerHTML = winLoseText;
     songToPlay.src="";
     musicPlayer.load();
     moreQuestions();
