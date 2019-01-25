@@ -1,14 +1,14 @@
 var songTitles = [
-'song1',
-'song2',
-'song3',
-'song4',
-'song5',
-'song6',
-'song7',
-'song8',
-'song9',
-'song10'
+"Mario",
+"Yoshi",
+"Zelda",
+"Rick Rollin",
+"Ernie",
+"Alligator King",
+"Simpsons",
+"Scooter",
+// "song9",
+// "song10"
 ];
 // console.log(songTitles);
 
@@ -38,8 +38,41 @@ var songChoices = wrongSongs.push(selectedSong);
 songChoices = shuffle(wrongSongs);
 console.log("Options Seen By Player: " + songChoices.toString());
 
+var songURL;
+function getSongURL(selectedSong) {
+  switch (selectedSong) {
+    case "Mario":
+      songURL = "ListentoGirlPlaysSuperMarioThemeSongonAncientChineseInstrument.mp3";
+      break;
+    case "Yoshi":
+      songURL = "4-10-OverworldBGM.mp3";
+      break;
+    case "Zelda":
+      songURL = "01TitleTheme.mp3";
+      break;
+    case "Rick Rollin":
+      songURL = "NeverGonnaGiveYouUp.mp3";
+      break;
+    case "Ernie":
+      songURL = "idontwanttoliveonthemoon.mp3";
+      break;
+    case "Alligator King":
+      songURL = "alligator_king.mp3";
+      break;
+    case "Simpsons":
+      songURL = "TheSimpsons.mp3";
+      break;
+    case "Scooter":
+      songURL = "Muppets-1993-MuppetHits-08-SimonSmithandtheAmazingDancingBear.mp3";
+      break; 
+  }
+}
+
+getSongURL(selectedSong);
+// alert(songURL);
+
 //Display the song options
-document.getElementById("playedSong").innerHTML = "The song to be played is " + selectedSong;
+document.getElementById("playedSong").innerHTML = "The song to be played is " + selectedSong + " with file located at " + songURL;
 
 document.getElementById("choice1").innerHTML = "1. " + wrongSongs[0];
 document.getElementById("choice2").innerHTML = "2. " + wrongSongs[1];

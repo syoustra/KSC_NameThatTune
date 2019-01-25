@@ -2,6 +2,7 @@ QUESTIONS:
   What keys should it map to?
   Toggle to play/pause, or play while held?
   Song files?
+  How to calculate score/what's base level?
 
 SUCCESSES:
   Randomize songs and options
@@ -16,9 +17,11 @@ SUCCESSES:
   Toggle play/pause
   Hold to play button
   Elapsed time of listening
+  Hide timer while playing
 
 https://codepen.io/syoustra/pen/ebwpbX ~ Quiz Template playground
 https://codepen.io/syoustra/pen/ZwGvEL ~ Music Player playground
+https://codepen.io/syoustra/pen/OdyExb ~ Writing to DOM playground
 
 ========================================================
 
@@ -100,6 +103,7 @@ VARIABLES NEEDED:
   musicPlayer ~ connects to overall audio player in DOM
   songToPlay ~ shorthand connection to audio player songSource in DOM (songToPlay.src = )
   songTimer ~ elapsed playing time of song (musicPlayer.currentTime)
+  placeholder, textToWrite ~ shortcut for writeToDom(placeholder, textToWrite)
 
 
 FUNCTIONS NEEDED:
@@ -108,6 +112,7 @@ FUNCTIONS NEEDED:
   .slice() ~ selects three other random wrong songs as answer options
   .push() ~ adds correct song into answer options array
   document.getElementById("").innerHTML = ""; ~ writes JavaScript to the DOM
+  writeToDom() ~ DRY function for printing text to screen
   listenForKeypress() ~ listens for player guesses
   playerInput() ~ inner function for event listener
   checkGuess() ~ checks player guess for correct/incorrect
