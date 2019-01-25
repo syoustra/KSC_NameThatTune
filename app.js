@@ -148,8 +148,15 @@ function nextQuestion() {
       document.getElementById("choice3").innerHTML = "3. The";
       document.getElementById("choice4").innerHTML = "4. Fool....";
     }
-    nextQuestion();
+    moreQuestions();
   }
 }
 
 nextQuestion();
+function moreQuestions() {
+  if (songTitles.length > 3) {
+    nextQuestion();
+  } else {
+    document.getElementById("choice1").innerHTML = "Thanks for playing!";
+  }
+}
