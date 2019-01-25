@@ -216,6 +216,14 @@ addEventListener("keydown", function(event) {
             document.getElementById("playedSong").innerHTML = winLoseText;
             listenForKeypress();
 
+              songChoices = shuffle(wrongSongs);
+  console.log("Options Seen By Player: " + songChoices.toString());
+ document.getElementById("choice1").innerHTML = "1. " + wrongSongs[0];
+  document.getElementById("choice2").innerHTML = "2. " + wrongSongs[1];
+  document.getElementById("choice3").innerHTML = "3. " + wrongSongs[2];
+  document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3];
+
+
 
 
       // document.getElementById("choice1").innerHTML = "1. By the Power";
