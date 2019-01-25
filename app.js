@@ -12,11 +12,6 @@ var songTitles = [
 ];
 // console.log(songTitles);
 
-// var selectedSong = songTitles[Math.floor(Math.random() * songTitles.length)];
-// console.log(selectedSong);
-
-// document.getElementById("playedSong").innerHTML = "Can you guess " + selectedSong + "?";
-
 
 //shuffle formula from https://alvinalexander.com/source-code/javascript-multiple-random-unique-elements-from-array
 function shuffle(a) {
@@ -76,7 +71,6 @@ function nextQuestion() {
   }
 
   getSongURL(selectedSong);
-  // alert(songURL);
 
   //Display the song options
   document.getElementById("playedSong").innerHTML = "The song to be played is " + selectedSong + " with file located at " + songURL;
@@ -86,21 +80,7 @@ function nextQuestion() {
   document.getElementById("choice3").innerHTML = "3. " + wrongSongs[2];
   document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3];
 
-  //Listen for player guesses
-  // window.addEventListener("keydown", checkKeyPressed);
-
-  // function checkKeyPressed(e) {
-  //     if (e.keyCode == "49") {
-  //         alert("Option 1 is selected");
-  //     } else if (e.keyCode == "50") {
-  //         alert("Option 2 is selected");
-  //     } else if (e.keyCode == "51") {
-  //         alert("Option 3 is selected");
-  //     } else if (e.keyCode == "52") {
-  //         alert("Option 4 is selected");
-  //     }
-  // }
-
+ 
 
 // -------------------------------------------------------------- MUSIC PLAYER------------------------//
 var musicPlayer;
@@ -225,6 +205,7 @@ function moreQuestions() {
     document.getElementById("choice1").innerHTML = "Thanks for playing!";
   }
 }
+
 
 
 songTimer = 0;
