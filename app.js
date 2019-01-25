@@ -120,6 +120,7 @@ function playSong() {
 
  document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
   document.getElementById("timePlayed").style.visibility = "hidden";
+      document.getElementById("choiceListingDiv").style.visibility = "hidden";
 }
 
 function pauseSong() {
@@ -128,7 +129,7 @@ function pauseSong() {
   
   document.getElementById("timePlayed").innerHTML = "You listened to this song for " + songTimer + " seconds.";
     document.getElementById("timePlayed").style.visibility = "visible";
-
+    document.getElementById("choiceListingDiv").style.visibility = "visible";
 
   document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
 }
@@ -176,22 +177,22 @@ addEventListener("keydown", function(event) {
     window.onkeydown = function(e) {
       switch (e.keyCode) {
         case 49:
-        alert('1');
+        // alert('1');
         playerGuess = 1;
         checkGuess(1);
         break;
         case 50:
-        alert('2');
+        // alert('2');
         playerGuess = 2;
         checkGuess(2);
         break;
         case 51:
-        alert('3');
+        // alert('3');
         playerGuess = 3;
         checkGuess(3);
         break;
         case 52:
-        alert('4');
+        // alert('4');
         playerGuess = 4;
         checkGuess(4);
         break;

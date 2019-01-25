@@ -86,6 +86,7 @@ REPEAT FOR EACH QUESTION:
 ========================================================
 HTML IDs NEEDED:
   option1, option2, option3, option4 ~ answer choices
+  choiceListingDiv ~ div containing all the choices, for easy hide/show
   playedSong ~ the correct song to be played/guessed
   musicPlayer ~ overall audio player
   songSource ~ URL for the song to be played
