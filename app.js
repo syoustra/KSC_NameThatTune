@@ -213,6 +213,9 @@ addEventListener("keydown", function(event) {
       document.getElementById("choiceListingDiv").style.visibility = "hidden";
       winLoseText = "Oops, try again!"
       console.log(winLoseText);
+            document.getElementById("playedSong").innerHTML = winLoseText;
+            listenForKeypress();
+
 
 
       // document.getElementById("choice1").innerHTML = "1. By the Power";
@@ -226,26 +229,28 @@ addEventListener("keydown", function(event) {
       winLoseText = "That's right! That was " + selectedSong + "!";
       console.log(winLoseText);
 
-      document.getElementById("choice1").innerHTML = "1. I";
-      document.getElementById("choice2").innerHTML = "2. Pity";
-      document.getElementById("choice3").innerHTML = "3. The";
-      document.getElementById("choice4").innerHTML = "4. Fool....";
-    }
-    questionsAsked++;
+      // document.getElementById("choice1").innerHTML = "1. I";
+      // document.getElementById("choice2").innerHTML = "2. Pity";
+      // document.getElementById("choice3").innerHTML = "3. The";
+      // document.getElementById("choice4").innerHTML = "4. Fool....";
+
+
+      questionsAsked++;
     // alert(questionsAsked);
-    document.getElementById("playedSong").innerHTML = winLoseText;
-    songToPlay.src="";
-    musicPlayer.load();
-    moreQuestions();
+      document.getElementById("playedSong").innerHTML = winLoseText;
+      songToPlay.src="";
+      musicPlayer.load();
+      moreQuestions();
+    }
   }
 }
 
 nextQuestion();
 function moreQuestions() {
-  if (songTitles.length > 3) {
+  if (questionsAsked < questionTotal) {
     nextQuestion();
   } else {
-    document.getElementById("choice1").innerHTML = "Thanks for playing!";
+    document.getElementById("playedSong").innerHTML = "Thanks for playing!";
   }
 }
 
