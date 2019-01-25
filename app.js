@@ -27,6 +27,11 @@ function shuffle(a) {
   return a;
 }
 
+var questionTotal;
+var questionsAsked;
+questionsAsked = 0;
+questionTotal = 5;
+
 function nextQuestion() {
   //Select the right and wrong songs for this question
   shuffle(songTitles);
@@ -97,6 +102,95 @@ function nextQuestion() {
   // }
 
 
+// -------------------------------------------------------------- MUSIC PLAYER------------------------//
+var musicPlayer;
+var songToPlay;
+var timePlayed;
+var songTimer;
+
+songToPlay = document.getElementById("songSource");
+songToPlay.src = songURL;
+
+musicPlayer = document.getElementById("musicPlayer");
+musicPlayer.load();
+
+songTimer = 0;
+function playSong() {
+  musicPlayer.play();
+//   var i=0,songTimer=setInterval(function(){i++},1000);
+  
+  
+  // setInterval(function () {
+  //   songTimer++;
+  // }, 1000);
+  document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
+  document.getElementById("timePlayed").style.visibility = "hidden";
+}
+
+function pauseSong() {
+  musicPlayer.pause();
+  songTimer = musicPlayer.currentTime;
+  
+  document.getElementById("timePlayed").innerHTML = "You listened to this song for " + songTimer + " seconds.";
+    document.getElementById("timePlayed").style.visibility = "visible";
+
+
+  document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
+}
+
+function toggleSong() {
+  if (musicPlayer.paused) {
+    playSong();
+  document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
+  } else {
+    pauseSong();
+    document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
+  }
+ 
+}
+
+// function nextSong() {
+//   pauseSong();
+//   if (songToPlay.src == "http://www.mariomayhem.com/downloads/sound_tracks/Legend_of_Zelda_Ocarina_of_Time_ost/01%20Title%20Theme.mp3") {
+//     pauseSong();
+//     songToPlay.src = songUrl2;
+//     playSong();
+//   } else {
+//     pauseSong();
+//     songToPlay.src = songUrl1;
+//     playSong();
+//   }
+// }
+
+// document.getElementById("timePlayed").innerHTML = "The song has been playing for " + songTimer * 1000 + " seconds.";
+
+
+
+// function listenForKeypress() {
+//   window.onkeydown = function(e) {
+//     if (e.keyCode == "49") {
+//       playSong();
+//     } else {
+//       pauseSong();
+//     }
+//   };
+// }
+
+// listenForKeypress();
+
+addEventListener("keydown", function(event) {
+    if (event.key == " ")
+      playSong();
+  });
+  addEventListener("keyup", function(event) {
+    if (event.key == " ")
+      pauseSong();
+  });
+// -------------------------------------------------------------- MUSIC PLAYER------------------------//
+
+
+
+
   ///////////////////NEATEN EVENTLISTENER//////////////////////////////////
   var playerGuess;
   // function checkGuess(playerGuess);
@@ -148,6 +242,10 @@ function nextQuestion() {
       document.getElementById("choice3").innerHTML = "3. The";
       document.getElementById("choice4").innerHTML = "4. Fool....";
     }
+    questionsAsked++;
+    alert(questionsAsked);
+    songToPlay.src="";
+    musicPlayer.load();
     moreQuestions();
   }
 }
@@ -160,3 +258,5 @@ function moreQuestions() {
     document.getElementById("choice1").innerHTML = "Thanks for playing!";
   }
 }
+
+

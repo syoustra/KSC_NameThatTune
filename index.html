@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Name That Tune</title>
-        <link href="main.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
+<head>
+    <title>Name That Tune</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
 
-        <p>Name That Tune!</p>
-        <p id="playedSong"></p>
-        <p></p>
-        <p>Your Choices Are .....</p>
-        <p id="choice1"></p>
-        <p id="choice2"></p>
-        <p id="choice3"></p>
-        <p id="choice4"></p>
+    <p>Name That Tune!</p>
+    <p id="playedSong"></p>
+    <p></p>
+    <p>Your Choices Are .....</p>
+    <p id="choice1"></p>
+    <p id="choice2"></p>
+    <p id="choice3"></p>
+    <p id="choice4"></p>
+
+
+    <!--MUSIC PLAYER-->
+
+    <audio id="musicPlayer">
+        <!--   <source src="horse.ogg" type="audio/ogg"> -->
+          <source id="songSource" src="" type="audio/mpeg">
+            <!-- Your browser does not support the audio element. -->
+        </audio>
+
+        <p id="playerState">What's happening</p>
+        <p id="timePlayed"></p>
+        <button onclick="playSong()" type="button">Play</button>
+        <button onclick="pauseSong()" type="button">Pause</button>
+        <button onclick="toggleSong()" type="button">Toggle</button>
+        <button onclick="nextSong()" type="button">Next Song</button>
+
     </body>
     <script src="app.js"></script>
 
-</html>
+    </html>
 
