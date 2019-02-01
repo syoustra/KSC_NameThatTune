@@ -137,16 +137,16 @@ function pauseSong() {
   document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
 }
 
-function toggleSong() {
-  if (musicPlayer.paused) {
-    playSong();
-  document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
-  } else {
-    pauseSong();
-    document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
-  }
+// function toggleSong() {
+//   if (musicPlayer.paused) {
+//     playSong();
+//   document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
+//   } else {
+//     pauseSong();
+//     document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
+//   }
  
-}
+// }
 
 
 addEventListener("keydown", function(event) {
@@ -158,10 +158,11 @@ addEventListener("keydown", function(event) {
       pauseSong();
   });
 
-  addEventListener("keydown", function(event) {
-    if (event.key == "p")
-      toggleSong();
-  })
+// ONLY WORKS FOR FIRST TIME?!?!?!?!?
+  // addEventListener("keydown", function(event) {
+  //   if (event.key == "p")
+  //     toggleSong();
+  // })
 
   addEventListener("keydown", function(event) {
     if (event.key == "q")
