@@ -36,6 +36,7 @@ questionTotal = 5;
 var totalScore = 0;
 var currentHighScore;
 var storedHighScore;
+var wrongGuess;
 
 
 // storedHighScore = 50;
@@ -54,6 +55,9 @@ if (localStorage.getItem("storedHighScore") !== null && localStorage.getItem("st
 
 function nextQuestion() {
   //Select the right and wrong songs for this question
+
+  wrongGuess = 0;
+
   shuffle(songTitles);
 
   var selectedSong = songTitles.pop();
@@ -163,7 +167,7 @@ function pauseSong() {
   end();
   
   
-  roundScore = 100 - (Math.round(songTimer)) - (Math.round(timeDiff));
+  roundScore = 100 - (Math.round(songTimer)) - (Math.round(timeDiff)) - (wrongGuess * 5);
   // totalScore = totalScore + roundScore;
   document.getElementById("score").innerHTML = "Your elapsed time is " + timeDiff + " and your round score is " + roundScore;
   // + " and your total score is " + totalScore;
@@ -249,6 +253,7 @@ addEventListener("keydown", function(event) {
       // alert("YOU WIN!!!!!");
       document.getElementById("choiceListingDiv").style.visibility = "hidden";
       winLoseText = "Oops, try again!"
+      wrongGuess ++;
       console.log(winLoseText);
             document.getElementById("playedSong").innerHTML = winLoseText;
             listenForKeypress();
@@ -286,6 +291,7 @@ addEventListener("keydown", function(event) {
       document.getElementById("playedSong").innerHTML = winLoseText 
         + " Your score for this question is " + roundScore
         + " and your total score so far is " + totalScore + "."
+        + " You had " + wrongGuess + " wrong guesses."
         + " Press space for the next question.";
       songToPlay.src="";
       musicPlayer.load();
