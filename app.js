@@ -34,6 +34,7 @@ var questionsAsked;
 questionsAsked = 0;
 questionTotal = 5;
 
+
 function nextQuestion() {
   //Select the right and wrong songs for this question
   shuffle(songTitles);
@@ -111,7 +112,8 @@ var musicPlayer;
 var songToPlay;
 var timePlayed;
 var songTimer;
-var score;
+var roundScore;
+// var totalScore = 0;
 
 start();
 songToPlay = document.getElementById("songSource");
@@ -139,13 +141,14 @@ function pauseSong() {
     document.getElementById("choiceListingDiv").style.visibility = "visible";
 
   document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
-  
+
 
   end();
   
   
-  score = 100 - (Math.round(songTimer)) - (Math.round(timeDiff));
-  document.getElementById("score").innerHTML = "Your elapsed time is " + timeDiff + " and your score is " + score;
+  roundScore = 100 - (Math.round(songTimer)) - (Math.round(timeDiff));
+  totalScore = totalScore + roundScore;
+  document.getElementById("score").innerHTML = "Your elapsed time is " + timeDiff + " and your round score is " + roundScore + " and your total score is " + totalScore;
 
 
 }
