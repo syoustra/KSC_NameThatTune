@@ -61,7 +61,9 @@ function nextQuestion() {
   shuffle(songTitles);
 
   var selectedSong = songTitles.pop();
-  var wrongSongs = songTitles.slice(0,3);
+  //---------------------------------CHANGE FOR NUMBER OF CHOICES----------------------------//
+  // var wrongSongs = songTitles.slice(0,3);
+  var wrongSongs = songTitles.slice(0,2);
   console.log("Correct Song: " + selectedSong[0]);
   console.log("Wrong Choices: " + wrongSongs.toString());
   var songChoices = wrongSongs.push(selectedSong);
@@ -110,7 +112,8 @@ function nextQuestion() {
   document.getElementById("choice1").innerHTML = "1. " + wrongSongs[0][0];
   document.getElementById("choice2").innerHTML = "2. " + wrongSongs[1][0];
   document.getElementById("choice3").innerHTML = "3. " + wrongSongs[2][0];
-  document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3][0];
+    //---------------------------------CHANGE FOR NUMBER OF CHOICES----------------------------//
+  // document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3][0];
 
   //Listen for player guesses
   // window.addEventListener("keydown", checkKeyPressed);
@@ -233,11 +236,12 @@ addEventListener("keydown", function(event) {
         playerGuess = 3;
         checkGuess(3);
         break;
-        case 52:
-        // alert('4');
-        playerGuess = 4;
-        checkGuess(4);
-        break;
+          //---------------------------------CHANGE FOR NUMBER OF CHOICES----------------------------//
+        // case 52:
+        // // alert('4');
+        // playerGuess = 4;
+        // checkGuess(4);
+        // break;
       }
       console.log("playerGuess = " + playerGuess);
     };
@@ -263,7 +267,8 @@ addEventListener("keydown", function(event) {
  document.getElementById("choice1").innerHTML = "1. " + wrongSongs[0][0];
   document.getElementById("choice2").innerHTML = "2. " + wrongSongs[1][0];
   document.getElementById("choice3").innerHTML = "3. " + wrongSongs[2][0];
-  document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3][0];
+    //---------------------------------CHANGE FOR NUMBER OF CHOICES----------------------------//
+  // document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3][0];
 
 
 
