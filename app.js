@@ -111,7 +111,9 @@ var musicPlayer;
 var songToPlay;
 var timePlayed;
 var songTimer;
+var score;
 
+start();
 songToPlay = document.getElementById("songSource");
 songToPlay.src = "songs\\" + selectedSong[1];
 console.log(songToPlay);
@@ -137,6 +139,15 @@ function pauseSong() {
     document.getElementById("choiceListingDiv").style.visibility = "visible";
 
   document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
+  
+
+  end();
+  
+  
+  score = 100 - (Math.round(songTimer)) - (Math.round(timeDiff));
+  document.getElementById("score").innerHTML = "Your elapsed time is " + timeDiff + " and your score is " + score;
+
+
 }
 
 // function toggleSong() {
@@ -274,5 +285,25 @@ function removeElement(elementId) {
     // Removes an element from the document
     var element = document.getElementById(elementId);
     element.parentNode.removeChild(element);
+}
+
+
+//------------------------------------------------------SCORING FUNCTIONS--------------------//
+//https://stackoverflow.com/questions/41632942/how-to-measure-time-elapsed-on-javascript
+var startTime, endTime, timeDiff;
+
+function start() {
+  startTime = new Date();
+};
+
+function end() {
+  endTime = new Date();
+  timeDiff = endTime - startTime; //in ms
+  // strip the ms
+  timeDiff /= 1000;
+
+  // get seconds 
+  var seconds = Math.round(timeDiff);
+  console.log(seconds + " seconds");
 }
 
