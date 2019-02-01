@@ -52,6 +52,47 @@ if (localStorage.getItem("storedHighScore") !== null && localStorage.getItem("st
   console.log("Stored High Score has been initialized at 0");
 }
 
+        document.getElementById("gameScreen").style.visibility = "hidden";
+
+
+
+
+
+//------------------------------------CLEAR SPLASH SCREEN/START GAME----------------------------------/
+
+ function startGame() {
+
+    window.onkeydown = function(e) {
+      switch (e.keyCode) {
+        case 32:
+        document.getElementById("splashScreen").style.display = "none";
+        console.log("Game begins NOW!!!!!");
+        nextQuestion();
+        break;
+      }
+    };
+  }
+
+  // startGame();
+
+// addEventListener("keydown", startQuestion(event));
+//   function startQuestion() {
+//     if (event.key == " ")
+//         document.getElementById("splashScreen").style.display = "none";
+
+//       removeEventListener("keydown", startQuestion(event));
+//       nextQuestion();
+//     }
+
+  //   addEventListener("keydown", function(event) {
+  //   if (event.key == " ") {
+  //       document.getElementById("splashScreen").style.display = "none";
+  //       nextQuestion();
+
+  //     playSong();
+  //   }
+  // });
+//------------------------------------CLEAR SPLASH SCREEN/START GAME----------------------------------/
 
 
 
@@ -193,8 +234,12 @@ function pauseSong() {
 
 
 addEventListener("keydown", function(event) {
-    if (event.key == " ")
-      playSong();
+    if (event.key == " "){
+                document.getElementById("splashScreen").style.display = "none";
+        document.getElementById("gameScreen").style.visibility = "visible";
+  
+          playSong();
+        }
   });
   addEventListener("keyup", function(event) {
     if (event.key == " ")
@@ -312,6 +357,11 @@ addEventListener("keydown", function(event) {
   }
 }
 
+
+
+//----------------------------START OF ACTUAL GAMEPLAY, PERHAPS???--------------------------------------//
+
+startGame();
 nextQuestion();
 function moreQuestions() {
   if (questionsAsked < questionTotal) {

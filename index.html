@@ -5,7 +5,8 @@
     <link href="main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<!-- 
+
+<div id = "splashScreen">
 <pre>
 
   .-')                      ('-.      .-') _           ('-.          (`\ .-') /`      .-') _   ('-. .-.         ('-.           .-') _    (`\ .-') /`       .-')   .-') _    
@@ -28,10 +29,29 @@
 ██║ ╚████║██║  ██║██║ ╚═╝ ██║███████╗       ██║   ██║  ██║██║  ██║   ██║          ██║   ╚██████╔╝██║ ╚████║███████╗
 ╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝       ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝          ╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚══════╝
                                                                                                                    
+</pre>
 
+    <p>Press 'p' to toggle music on/off .... hold/release space to play/pause .... 1-4 to guess .... q to quit</p>
+<pre>
+
+
+
+
+        M""""""'YMM          MP""""""`MM          oo                                     
+ dP dP  M  mmmm. `M          M  mmmmm..M                                                 
+8888888 M  MMMMM  M .d8888b. M.      `YM .d8888b. dP .d8888b. 88d888b. .d8888b. .d8888b. 
+ 88 88  M  MMMMM  M 88'  `88 MMMMMMM.  M 88'  `"" 88 88ooood8 88'  `88 88'  `"" 88ooood8 
+8888888 M  MMMM' .M 88.  .88 M. .MMM'  M 88.  ... 88 88.  ... 88    88 88.  ... 88.  ... 
+ dP dP  M       .MM `88888P' Mb.     .dM `88888P' dP `88888P' dP    dP `88888P' `88888P' 
+        MMMMMMMMMMM          MMMMMMMMMMM                                                 
+                                                                                         
 
 </pre>
- -->
+
+</div>
+
+<div id="gameScreen">
+
     <p>Name That Tune!</p>
     <p id="playedSong"></p>
     <p id="instructions">Press 'p' to toggle music on/off .... hold/release space to play/pause .... 1-4 to guess .... q to quit</p>
@@ -63,17 +83,17 @@
         <button onclick="pauseSong()" type="button">Pause</button>
         <button onclick="toggleSong()" type="button">Toggle</button>
  -->
-
-<pre>
+</div>
+<!-- <pre>
     
-<!--    _  _  ______      _____      _                     
+    _  _  ______      _____      _                     
  _| || |_|  _  \    /  ___|    (_)                    
 |_  __  _| | | |___ \ `--.  ___ _  ___ _ __   ___ ___ 
  _| || |_| | | / _ \ `--. \/ __| |/ _ \ '_ \ / __/ _ \
 |_  __  _| |/ / (_) /\__/ / (__| |  __/ | | | (_|  __/
   |_||_| |___/ \___/\____/ \___|_|\___|_| |_|\___\___|
 
- -->
+
 
 
         M""""""'YMM          MP""""""`MM          oo                                     
@@ -87,7 +107,7 @@
 
 
 </pre>    
-
+ -->
     </body>
     <script src="app.js"></script>
 
