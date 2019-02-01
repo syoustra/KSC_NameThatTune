@@ -38,8 +38,8 @@ var currentHighScore;
 var storedHighScore;
 
 
-storedHighScore = 40;
-localStorage.setItem("storedHighScore", storedHighScore);
+// storedHighScore = 50;
+// localStorage.setItem("storedHighScore", storedHighScore);
 console.log(localStorage.getItem("storedHighScore"));
 if (localStorage.getItem("storedHighScore") !== null && localStorage.getItem("storedHighScore") !== ""
     && typeof(localStorage.getItem("storedHighScore") != "undefined")) {
