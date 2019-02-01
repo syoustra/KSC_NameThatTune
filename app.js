@@ -1,15 +1,16 @@
 var songTitles = [
-"Mario",
-"Yoshi",
-"Zelda",
-"Rick Rollin",
-"Ernie",
-"Alligator King",
-"Simpsons",
-"Scooter",
-// "song9",
-// "song10"
-];
+ ["Africa", "Africa_by_Toto.mp3"],
+ ["Come On, Eileen", "Come_On_Eileen!_by_Desy's_Midnight_Runners.mp3"],
+ ["Born in the USA", "Born_in_the_U.S.A._by_Bruce_Springsteen_.mp3"],
+ ["Relax", "Relax_by_Frankie_Goes_to_Hollywood_.mp3"],
+ ["Tainted Love", "Tainted_Love_by_Soft_Cell.mp3"],
+ ["When Doves Cry", "When_Doves_Cry_by_Prince.mp3"],
+ ["SuperFreak", "super_freak_rick_james_(_lyrics_).mp3"],
+ ["Take On Me", "a-Ha_-_Take_On_Me_[lyrics].mp3"],
+ ["Alone", "alone_by_heart_with_lyrics.mp3"],
+ ["It Takes Two", "It_Takes_Two_by_rob_base.mp3"]
+  ];
+
 // console.log(songTitles);
 
 // var selectedSong = songTitles[Math.floor(Math.random() * songTitles.length)];
@@ -39,7 +40,7 @@ function nextQuestion() {
 
   var selectedSong = songTitles.pop();
   var wrongSongs = songTitles.slice(0,3);
-  console.log("Correct Song: " + selectedSong);
+  console.log("Correct Song: " + selectedSong[0]);
   console.log("Wrong Choices: " + wrongSongs.toString());
   var songChoices = wrongSongs.push(selectedSong);
   songChoices = shuffle(wrongSongs);
@@ -47,36 +48,36 @@ function nextQuestion() {
   console.log("Current array length: " + songTitles.length);
 
   var songURL;
-  function getSongURL(selectedSong) {
-    switch (selectedSong) {
-      case "Mario":
-      songURL = "ListentoGirlPlaysSuperMarioThemeSongonAncientChineseInstrument.mp3";
-      break;
-      case "Yoshi":
-      songURL = "4-10-OverworldBGM.mp3";
-      break;
-      case "Zelda":
-      songURL = "01TitleTheme.mp3";
-      break;
-      case "Rick Rollin":
-      songURL = "NeverGonnaGiveYouUp.mp3";
-      break;
-      case "Ernie":
-      songURL = "idontwanttoliveonthemoon.mp3";
-      break;
-      case "Alligator King":
-      songURL = "alligator_king.mp3";
-      break;
-      case "Simpsons":
-      songURL = "TheSimpsons.mp3";
-      break;
-      case "Scooter":
-      songURL = "Muppets-1993-MuppetHits-08-SimonSmithandtheAmazingDancingBear.mp3";
-      break; 
-    }
-  }
+  // function getSongURL(selectedSong) {
+  //   switch (selectedSong) {
+  //     case "Mario":
+  //     songURL = "ListentoGirlPlaysSuperMarioThemeSongonAncientChineseInstrument.mp3";
+  //     break;
+  //     case "Yoshi":
+  //     songURL = "4-10-OverworldBGM.mp3";
+  //     break;
+  //     case "Zelda":
+  //     songURL = "01TitleTheme.mp3";
+  //     break;
+  //     case "Rick Rollin":
+  //     songURL = "NeverGonnaGiveYouUp.mp3";
+  //     break;
+  //     case "Ernie":
+  //     songURL = "idontwanttoliveonthemoon.mp3";
+  //     break;
+  //     case "Alligator King":
+  //     songURL = "alligator_king.mp3";
+  //     break;
+  //     case "Simpsons":
+  //     songURL = "TheSimpsons.mp3";
+  //     break;
+  //     case "Scooter":
+  //     songURL = "Muppets-1993-MuppetHits-08-SimonSmithandtheAmazingDancingBear.mp3";
+  //     break; 
+  //   }
+  // }
 
-  getSongURL(selectedSong);
+  // getSongURL(selectedSong);
   // alert(songURL);
 
   //Display the song options
@@ -84,10 +85,10 @@ function nextQuestion() {
 
   document.getElementById("choiceListingDiv").style.visibility = "hidden";
 
-  document.getElementById("choice1").innerHTML = "1. " + wrongSongs[0];
-  document.getElementById("choice2").innerHTML = "2. " + wrongSongs[1];
-  document.getElementById("choice3").innerHTML = "3. " + wrongSongs[2];
-  document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3];
+  document.getElementById("choice1").innerHTML = "1. " + wrongSongs[0][0];
+  document.getElementById("choice2").innerHTML = "2. " + wrongSongs[1][0];
+  document.getElementById("choice3").innerHTML = "3. " + wrongSongs[2][0];
+  document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3][0];
 
   //Listen for player guesses
   // window.addEventListener("keydown", checkKeyPressed);
@@ -112,7 +113,8 @@ var timePlayed;
 var songTimer;
 
 songToPlay = document.getElementById("songSource");
-songToPlay.src = songURL;
+songToPlay.src = "songs\\" + selectedSong[1];
+console.log(songToPlay);
 
 musicPlayer = document.getElementById("musicPlayer");
 musicPlayer.load();
@@ -221,10 +223,10 @@ addEventListener("keydown", function(event) {
 
               songChoices = shuffle(wrongSongs);
   console.log("Options Seen By Player: " + songChoices.toString());
- document.getElementById("choice1").innerHTML = "1. " + wrongSongs[0];
-  document.getElementById("choice2").innerHTML = "2. " + wrongSongs[1];
-  document.getElementById("choice3").innerHTML = "3. " + wrongSongs[2];
-  document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3];
+ document.getElementById("choice1").innerHTML = "1. " + wrongSongs[0][0];
+  document.getElementById("choice2").innerHTML = "2. " + wrongSongs[1][0];
+  document.getElementById("choice3").innerHTML = "3. " + wrongSongs[2][0];
+  document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3][0];
 
 
 
