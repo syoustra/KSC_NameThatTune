@@ -33,6 +33,9 @@ var questionTotal;
 var questionsAsked;
 questionsAsked = 0;
 questionTotal = 5;
+var totalScore = 0;
+var highScore = 0;
+
 
 
 function nextQuestion() {
@@ -147,8 +150,9 @@ function pauseSong() {
   
   
   roundScore = 100 - (Math.round(songTimer)) - (Math.round(timeDiff));
-  totalScore = totalScore + roundScore;
-  document.getElementById("score").innerHTML = "Your elapsed time is " + timeDiff + " and your round score is " + roundScore + " and your total score is " + totalScore;
+  // totalScore = totalScore + roundScore;
+  document.getElementById("score").innerHTML = "Your elapsed time is " + timeDiff + " and your round score is " + roundScore;
+  // + " and your total score is " + totalScore;
 
 
 }
@@ -253,7 +257,7 @@ addEventListener("keydown", function(event) {
     } else {
       // alert("*sad trombone*");
       document.getElementById("choiceListingDiv").style.visibility = "hidden";
-      winLoseText = "That's right! That was " + selectedSong + "!";
+      winLoseText = "That's right! That was " + selectedSong[0] + "!";
       console.log(winLoseText);
 
       // document.getElementById("choice1").innerHTML = "1. I";
@@ -264,9 +268,16 @@ addEventListener("keydown", function(event) {
 
       questionsAsked++;
     // alert(questionsAsked);
-      document.getElementById("playedSong").innerHTML = winLoseText;
+      totalScore = totalScore + roundScore;
+      document.getElementById("playedSong").innerHTML = winLoseText 
+        + " Your score for this question is " + roundScore
+        + " and your total score so far is " + totalScore + "."
+        + " Press space for the next question.";
       songToPlay.src="";
       musicPlayer.load();
+
+
+
       moreQuestions();
     }
   }
@@ -277,7 +288,7 @@ function moreQuestions() {
   if (questionsAsked < questionTotal) {
     nextQuestion();
   } else {
-    document.getElementById("playedSong").innerHTML = "Thanks for playing!";
+    document.getElementById("playedSong").innerHTML = "Thanks for playing! Your total score was " + totalScore;
     removeElement("choiceListingDiv");
     removeElement("musicPlayerDiv");
     document.getElementById("instructions").innerHTML = "Please press q to play again";
