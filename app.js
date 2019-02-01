@@ -37,6 +37,8 @@ var totalScore = 0;
 var currentHighScore;
 var storedHighScore;
 var wrongGuess;
+var totalWrongGuesses;
+totalWrongGuesses = 0;
 
 
 // storedHighScore = 50;
@@ -293,6 +295,8 @@ addEventListener("keydown", function(event) {
       questionsAsked++;
     // alert(questionsAsked);
       totalScore = totalScore + roundScore;
+        totalWrongGuesses = totalWrongGuesses + wrongGuess;
+
       document.getElementById("playedSong").innerHTML = winLoseText 
         + " Your score for this question is " + roundScore
         + " and your total score so far is " + totalScore + "."
@@ -324,7 +328,8 @@ function moreQuestions() {
 
  
 
-    document.getElementById("playedSong").innerHTML = "Thanks for playing! Your total score was " + totalScore;
+    document.getElementById("playedSong").innerHTML = "Thanks for playing! Your total score was " + totalScore
+      + " with a total of " + totalWrongGuesses + " wrong guesses.";
     removeElement("choiceListingDiv");
     removeElement("musicPlayerDiv");
     document.getElementById("instructions").innerHTML = "Please press q to play again";
