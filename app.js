@@ -34,7 +34,21 @@ var questionsAsked;
 questionsAsked = 0;
 questionTotal = 5;
 var totalScore = 0;
-var highScore = 0;
+var currentHighScore;
+var storedHighScore;
+
+
+storedHighScore = 40;
+localStorage.setItem("storedHighScore", storedHighScore);
+console.log(localStorage.getItem("storedHighScore"));
+if (localStorage.getItem("storedHighScore") !== null && localStorage.getItem("storedHighScore") !== ""
+    && typeof(localStorage.getItem("storedHighScore") != "undefined")) {
+  console.log("The current stored high score is " + localStorage.getItem("storedHighScore"));
+} else {
+  localStorage.setItem("storedHighScore", "0");
+  console.log("Stored High Score has been initialized at 0");
+}
+
 
 
 
@@ -288,6 +302,17 @@ function moreQuestions() {
   if (questionsAsked < questionTotal) {
     nextQuestion();
   } else {
+
+      currentHighScore = parseInt(localStorage.getItem("storedHighScore"));
+      console.log("Current High Score is " + currentHighScore);
+      console.log("Total Score is " + totalScore);
+      if (totalScore > currentHighScore) {
+        localStorage.setItem("storedHighScore", totalScore);
+        console.log("HIGH SCORE!!!!!");
+      }
+
+ 
+
     document.getElementById("playedSong").innerHTML = "Thanks for playing! Your total score was " + totalScore;
     removeElement("choiceListingDiv");
     removeElement("musicPlayerDiv");
