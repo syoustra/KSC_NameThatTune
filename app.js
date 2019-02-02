@@ -418,18 +418,18 @@ function moreQuestions() {
 
 
 
-    document.getElementById("playedSong").innerHTML = "Thanks for playing! Your total score was " + totalScore
-      + " with a total of " + totalWrongGuesses + " wrong guesses."
-      + " The previous High Score was " + currentHighScore + ".";
+    document.getElementById("playedSong").innerHTML = " <br> Thanks for playing! Your total score was " + totalScore
+      + " with a total of " + totalWrongGuesses + " wrong guesses. <br>"
+      + " The previous High Score was " + currentHighScore + ". <br> <br> <br>";
 
       if (totalScore > currentHighScore) {
         localStorage.setItem("storedHighScore", totalScore);
         console.log("HIGH SCORE!!!!!");
-        document.getElementById("playedSong").innerHTML = " You beat the High Score!!!!! <br>"
+        document.getElementById("playedSong").innerHTML += " You beat the High Score!!!!! <br>"
          + " Congrats, and enjoy the rest of your evening at Kentucky Science Center's Science with a Twist!"
       } else {
 
-        document.getElementById("playedSong").innerHTML = " You did not beat the High Score. *insert sad trombones here* <br>"
+        document.getElementById("playedSong").innerHTML += " You did not beat the High Score. *insert sad trombones here* <br>"
          + " Thanks for trying, though, and enjoy the rest of your evening at Kentucky Science Center's Science with a Twist!"
 
       }
