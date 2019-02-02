@@ -115,7 +115,7 @@ function nextQuestion() {
   roundScore = 0;  
 
 
-      document.getElementById("questionText").innerHTML = "Mystery Song #" + (questionsAsked + 1) + " of 10:"
+      // document.getElementById("questionText").innerHTML = "Mystery Song #" + (questionsAsked + 1) + " of 10:"
 
 
   shuffle(songTitles);
@@ -357,6 +357,8 @@ addEventListener("keydown", function(event) {
       // alert("*sad trombone*");
       document.getElementById("choiceListingDiv").style.visibility = "hidden";
       winLoseText = "That's right! That was " + selectedSong[0] + " by " + selectedSong[2] + "!";
+                  document.getElementById("questionText").innerHTML = winLoseText;
+
       console.log(winLoseText);
 
       // document.getElementById("choice1").innerHTML = "1. I";
@@ -379,6 +381,9 @@ addEventListener("keydown", function(event) {
       //   + " and your total score so far is " + totalScore + "."
       //   + " You had " + wrongGuess + " wrong guesses."
       //   + " Press space for the next question.";
+
+                        document.getElementById("questionText").innerHTML = winLoseText;
+
       songToPlay.src="";
       musicPlayer.load();
 
@@ -401,6 +406,8 @@ nextQuestion();
 function moreQuestions() {
   if (questionsAsked < questionTotal) {
             document.getElementById("scoreStatus").innerHTML = "Current High Score: " + storedHighScore + "   Your Score: " + totalScore;
+                  document.getElementById("questionText").innerHTML = winLoseText;
+
 
     nextQuestion();
   } else {
