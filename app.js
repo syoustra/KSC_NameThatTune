@@ -49,7 +49,7 @@ if (localStorage.getItem("storedHighScore") !== null && localStorage.getItem("st
     && typeof(localStorage.getItem("storedHighScore") != "undefined")) {
   console.log("The current stored high score is " + localStorage.getItem("storedHighScore"));
 } else {
-  localStorage.setItem("storedHighScore", "0");
+  localStorage.setItem("storedHighScore", 0);
   console.log("Stored High Score has been initialized at 0");
 }
 
