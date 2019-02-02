@@ -43,6 +43,7 @@ totalWrongGuesses = 0;
 
 // storedHighScore = 50;
 // localStorage.setItem("storedHighScore", storedHighScore);
+storedHighScore = localStorage.getItem("storedHighScore");
 console.log(localStorage.getItem("storedHighScore"));
 if (localStorage.getItem("storedHighScore") !== null && localStorage.getItem("storedHighScore") !== ""
     && typeof(localStorage.getItem("storedHighScore") != "undefined")) {
@@ -54,11 +55,14 @@ if (localStorage.getItem("storedHighScore") !== null && localStorage.getItem("st
 
         document.getElementById("gameScreen").style.visibility = "hidden";
 
+document.getElementById("currentHighScore").innerHTML = "Current High Score is .... " + storedHighScore;
+console.log("Stored high score is " + storedHighScore);
 
 
 
 
 //------------------------------------CLEAR SPLASH SCREEN/START GAME----------------------------------/
+
 
  function startGame() {
 
