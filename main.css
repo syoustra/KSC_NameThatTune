@@ -38,6 +38,10 @@ pre {
   text-align: center;
 }
 
+#gameScreen {
+  font-size: 2.0rem;
+}
+
 #currentHighScore {
   font-size: 2.5rem;
 }
@@ -48,9 +52,18 @@ pre {
 
 #instructions {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 }
 
-#gameScreen {
-  font-size: 2.0rem;
+#gameScreenHeader {
+    text-align: center;
+  }
+
+#title {
+  font-size: 2.5rem;
 }
+
+#scoreStatus {
+  font-size: 2.2rem;
+}
+

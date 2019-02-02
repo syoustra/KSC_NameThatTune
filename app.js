@@ -64,13 +64,19 @@ console.log("Stored high score is " + storedHighScore);
 //------------------------------------CLEAR SPLASH SCREEN/START GAME----------------------------------/
 
 
+
+//-------------------------------this never actually happens?!?!?!?!?
  function startGame() {
+
+        document.getElementById("scoreStatus").innerHTML = "Current High Score: " + storedHighScore + "   Your Score: " + totalScore;
 
     window.onkeydown = function(e) {
       switch (e.keyCode) {
         case 32:
         document.getElementById("splashScreen").style.display = "none";
         console.log("Game begins NOW!!!!!");
+                document.getElementById("scoreStatus").innerHTML = "Current High Score: " + storedHighScore + "   Your Score: " + totalScore;
+                console.log(storedHighScore, totalScore);
         nextQuestion();
         break;
       }
@@ -368,9 +374,12 @@ addEventListener("keydown", function(event) {
 // document.documentElement.requestFullscreen();
 
 startGame();
+
 nextQuestion();
 function moreQuestions() {
   if (questionsAsked < questionTotal) {
+            document.getElementById("scoreStatus").innerHTML = "Current High Score: " + storedHighScore + "   Your Score: " + totalScore;
+
     nextQuestion();
   } else {
 
