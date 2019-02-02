@@ -156,9 +156,9 @@ function nextQuestion() {
 
   document.getElementById("choiceListingDiv").style.visibility = "hidden";
 
-  document.getElementById("choice1").innerHTML = "1. " + wrongSongs[0][0];
-  document.getElementById("choice2").innerHTML = "2. " + wrongSongs[1][0];
-  document.getElementById("choice3").innerHTML = "3. " + wrongSongs[2][0];
+  document.getElementById("choice1").innerHTML = "RED ~ " + wrongSongs[0][0];
+  document.getElementById("choice2").innerHTML = "BLUE ~ " + wrongSongs[1][0];
+  document.getElementById("choice3").innerHTML = "GREEN ~ " + wrongSongs[2][0];
     //---------------------------------CHANGE FOR NUMBER OF CHOICES----------------------------//
   // document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3][0];
 
@@ -315,9 +315,9 @@ addEventListener("keydown", function(event) {
 
               songChoices = shuffle(wrongSongs);
   console.log("Options Seen By Player: " + songChoices.toString());
- document.getElementById("choice1").innerHTML = "1. " + wrongSongs[0][0];
-  document.getElementById("choice2").innerHTML = "2. " + wrongSongs[1][0];
-  document.getElementById("choice3").innerHTML = "3. " + wrongSongs[2][0];
+ document.getElementById("choice1").innerHTML = "RED ~ " + wrongSongs[0][0];
+  document.getElementById("choice2").innerHTML = "BLUE ~ " + wrongSongs[1][0];
+  document.getElementById("choice3").innerHTML = "GREEN ~ " + wrongSongs[2][0];
     //---------------------------------CHANGE FOR NUMBER OF CHOICES----------------------------//
   // document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3][0];
 

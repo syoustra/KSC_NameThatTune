@@ -46,9 +46,10 @@ pre {
   font-size: 1.7rem;
 }
 
-/*#instructions {
-  font-size: 1.5rem;
-}*/
+#instructions {
+  text-align: center;
+  font-size: 1.8rem;
+}
 
 #gameScreen {
   font-size: 2.0rem;
