@@ -32,7 +32,7 @@ var winLoseText;
 var questionTotal;
 var questionsAsked;
 questionsAsked = 0;
-questionTotal = 5;
+questionTotal = 2;
 var totalScore = 0;
 var currentHighScore;
 var storedHighScore;
@@ -357,7 +357,7 @@ addEventListener("keydown", function(event) {
       // alert("*sad trombone*");
       document.getElementById("choiceListingDiv").style.visibility = "hidden";
       winLoseText = "That's right! That was " + selectedSong[0] + " by " + selectedSong[2] + "!";
-                  document.getElementById("questionText").innerHTML = winLoseText;
+                  // document.getElementById("questionText").innerHTML = winLoseText;
 
       console.log(winLoseText);
 
@@ -382,7 +382,7 @@ addEventListener("keydown", function(event) {
       //   + " You had " + wrongGuess + " wrong guesses."
       //   + " Press space for the next question.";
 
-                        document.getElementById("questionText").innerHTML = winLoseText;
+                        // document.getElementById("questionText").innerHTML = winLoseText;
 
       songToPlay.src="";
       musicPlayer.load();
@@ -405,7 +405,7 @@ startGame();
 nextQuestion();
 function moreQuestions() {
   if (questionsAsked < questionTotal) {
-            document.getElementById("scoreStatus").innerHTML = "Current High Score: " + storedHighScore + "   Your Score: " + totalScore;
+            // document.getElementById("scoreStatus").innerHTML = "Current High Score: " + storedHighScore + "   Your Score: " + totalScore;
                   document.getElementById("questionText").innerHTML = winLoseText;
 
 
@@ -419,13 +419,15 @@ function moreQuestions() {
         localStorage.setItem("storedHighScore", totalScore);
         console.log("HIGH SCORE!!!!!");
       }
-
  
 
     document.getElementById("playedSong").innerHTML = "Thanks for playing! Your total score was " + totalScore
       + " with a total of " + totalWrongGuesses + " wrong guesses.";
     removeElement("choiceListingDiv");
     removeElement("musicPlayerDiv");
+        removeElement("scoreStatus");
+        removeElement("questionText");
+
     document.getElementById("instructions").innerHTML = "Please press q to play again";
   }
 }
