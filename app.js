@@ -447,7 +447,7 @@ startGame();
 nextQuestion();
 function moreQuestions() {
   if (questionsAsked < questionTotal) {
-            // document.getElementById("scoreStatus").innerHTML = "Current High Score: " + storedHighScore + "   Your Score: " + totalScore;
+            document.getElementById("scoreStatus").innerHTML = "Current High Score: " + storedHighScore + "   Your Score: " + totalScore;
                   document.getElementById("questionText").innerHTML = winLoseText;
 
 
