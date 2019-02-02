@@ -210,6 +210,8 @@ musicPlayer.load();
 songTimer = 0;
 function playSong() {
   musicPlayer.play();
+        document.getElementById("questionText").innerHTML = "Mystery Song #" + (questionsAsked + 1) + " of 10:"
+
 
  // document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
   document.getElementById("timePlayed").style.visibility = "hidden";
@@ -325,14 +327,14 @@ addEventListener("keydown", function(event) {
     if (guessedSong != selectedSong) {
       // alert("YOU WIN!!!!!");
       document.getElementById("choiceListingDiv").style.visibility = "hidden";
-      winLoseText = "Oops, try again!"
+      winLoseText = "Survey says .... XXX! Try again."
       wrongGuess ++;
       console.log(winLoseText);
                   // document.getElementById("playedSong").style.display = "inline";
 
 
 
-            // document.getElementById("playedSong").innerHTML = winLoseText;
+            document.getElementById("questionText").innerHTML = winLoseText;
             listenForKeypress();
 
               songChoices = shuffle(wrongSongs);
