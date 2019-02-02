@@ -1,14 +1,14 @@
 var songTitles = [
- ["Africa", "Africa_by_Toto.mp3"],
- ["Come On, Eileen", "Come_On_Eileen!_by_Desy's_Midnight_Runners.mp3"],
- ["Born in the USA", "Born_in_the_U.S.A._by_Bruce_Springsteen_.mp3"],
- ["Relax", "Relax_by_Frankie_Goes_to_Hollywood_.mp3"],
- ["Tainted Love", "Tainted_Love_by_Soft_Cell.mp3"],
- ["When Doves Cry", "When_Doves_Cry_by_Prince.mp3"],
- ["SuperFreak", "super_freak_rick_james_(_lyrics_).mp3"],
- ["Take On Me", "a-Ha_-_Take_On_Me_[lyrics].mp3"],
- ["Alone", "alone_by_heart_with_lyrics.mp3"],
- ["It Takes Two", "It_Takes_Two_by_rob_base.mp3"]
+ ["Africa", "Africa_by_Toto.mp3", "band1"],
+ ["Come On, Eileen", "Come_On_Eileen!_by_Desy's_Midnight_Runners.mp3", "band1"],
+ ["Born in the USA", "Born_in_the_U.S.A._by_Bruce_Springsteen_.mp3", "band1"],
+ ["Relax", "Relax_by_Frankie_Goes_to_Hollywood_.mp3", "band1"],
+ ["Tainted Love", "Tainted_Love_by_Soft_Cell.mp3", "band1"],
+ ["When Doves Cry", "When_Doves_Cry_by_Prince.mp3", "band1"],
+ ["SuperFreak", "super_freak_rick_james_(_lyrics_).mp3", "band1"],
+ ["Take On Me", "a-Ha_-_Take_On_Me_[lyrics].mp3", "band1"],
+ ["Alone", "alone_by_heart_with_lyrics.mp3", "band1"],
+ ["It Takes Two", "It_Takes_Two_by_rob_base.mp3", "band1"]
   ];
 
 // console.log(songTitles);
@@ -332,7 +332,7 @@ addEventListener("keydown", function(event) {
     } else {
       // alert("*sad trombone*");
       document.getElementById("choiceListingDiv").style.visibility = "hidden";
-      winLoseText = "That's right! That was " + selectedSong[0] + "!";
+      winLoseText = "That's right! That was " + selectedSong[0] + " by " + selectedSong[2] + "!";
       console.log(winLoseText);
 
       // document.getElementById("choice1").innerHTML = "1. I";
