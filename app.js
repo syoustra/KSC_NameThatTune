@@ -225,6 +225,9 @@ function pauseSong() {
   
   
   roundScore = 100 - (Math.round(songTimer)) - (Math.round(timeDiff)) - (wrongGuess * 5);
+    // if (roundScore < 0) {
+    //   roundScore = 0;
+    // } 
   // totalScore = totalScore + roundScore;
   // document.getElementById("score").innerHTML = "Your elapsed time is " + timeDiff + " and your score for this question so far is " + roundScore;
   // + " and your total score is " + totalScore;
@@ -352,6 +355,10 @@ addEventListener("keydown", function(event) {
 
       questionsAsked++;
     // alert(questionsAsked);
+        if (roundScore < 0) {
+      roundScore = 0;
+    } 
+    
       totalScore = totalScore + roundScore;
         totalWrongGuesses = totalWrongGuesses + wrongGuess;
 
