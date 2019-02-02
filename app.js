@@ -415,14 +415,26 @@ function moreQuestions() {
       currentHighScore = parseInt(localStorage.getItem("storedHighScore"));
       console.log("Current High Score is " + currentHighScore);
       console.log("Total Score is " + totalScore);
+
+
+
+    document.getElementById("playedSong").innerHTML = "Thanks for playing! Your total score was " + totalScore
+      + " with a total of " + totalWrongGuesses + " wrong guesses."
+      + " The previous High Score was " + currentHighScore + ".";
+
       if (totalScore > currentHighScore) {
         localStorage.setItem("storedHighScore", totalScore);
         console.log("HIGH SCORE!!!!!");
+        document.getElementById("playedSong").innerHTML = " You beat the High Score!!!!! <br>"
+         + " Congrats, and enjoy the rest of your evening at Kentucky Science Center's Science with a Twist!"
+      } else {
+
+        document.getElementById("playedSong").innerHTML = " You did not beat the High Score. *insert sad trombones here* <br>"
+         + " Thanks for trying, though, and enjoy the rest of your evening at Kentucky Science Center's Science with a Twist!"
+
       }
  
 
-    document.getElementById("playedSong").innerHTML = "Thanks for playing! Your total score was " + totalScore
-      + " with a total of " + totalWrongGuesses + " wrong guesses.";
     removeElement("choiceListingDiv");
     removeElement("musicPlayerDiv");
         removeElement("scoreStatus");
