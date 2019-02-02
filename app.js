@@ -4,7 +4,7 @@ var songTitles = [
 ["You Shook Me All Night Long", "You_Shook_Me_All_Night_Long.mp3", "ACDC"],
 ["Take Me On", "Take_Me_On.mp3 ", "A-Ha"],
 ["Alone", "Alone.mp3", "Heart"],
-["BIllie Jean", "Billie_Jean.mp3", "Michael Jackson"],
+["Billie Jean", "Billie_Jean.mp3", "Michael Jackson"],
 ["Uptown Girl", "Uptown_Girl.mp3", "Billy Joel"],
 ["Livin' On A Prayer", "Livin_On_A_Prayer.mp3", "Bon Jovi"],
 ["Born In The USA", "Born_In_The_USA.mp3", "Bruce Springsteen"],
@@ -74,7 +74,7 @@ var winLoseText;
 var questionTotal;
 var questionsAsked;
 questionsAsked = 0;
-questionTotal = 2;
+questionTotal = 10;
 var totalScore = 0;
 var currentHighScore;
 var storedHighScore;
@@ -472,7 +472,7 @@ function moreQuestions() {
       } else {
 
         document.getElementById("playedSong").innerHTML += " You did not beat the High Score. *insert sad trombones here* <br>"
-         + " Thanks for trying, though, and enjoy the rest of your evening at Kentucky Science Center's Science with a Twist!"
+         + " Thanks for trying, though, and enjoy the rest of your evening at <br> Kentucky Science Center's Science with a Twist!"
 
       }
  
