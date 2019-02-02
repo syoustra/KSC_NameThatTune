@@ -110,6 +110,13 @@ function nextQuestion() {
   //Select the right and wrong songs for this question
 
   wrongGuess = 0;
+  songTimer = 0;
+  timeDiff = 0;
+  roundScore = 0;  
+
+
+      document.getElementById("questionText").innerHTML = "Mystery Song #" + (questionsAsked + 1) + " of 10:"
+
 
   shuffle(songTitles);
 
@@ -322,7 +329,10 @@ addEventListener("keydown", function(event) {
       wrongGuess ++;
       console.log(winLoseText);
                   // document.getElementById("playedSong").style.display = "inline";
-            document.getElementById("playedSong").innerHTML = winLoseText;
+
+
+
+            // document.getElementById("playedSong").innerHTML = winLoseText;
             listenForKeypress();
 
               songChoices = shuffle(wrongSongs);
@@ -358,15 +368,15 @@ addEventListener("keydown", function(event) {
         if (roundScore < 0) {
       roundScore = 0;
     } 
-    
+
       totalScore = totalScore + roundScore;
         totalWrongGuesses = totalWrongGuesses + wrongGuess;
 
-      document.getElementById("playedSong").innerHTML = winLoseText 
-        + " Your score for this question is " + roundScore
-        + " and your total score so far is " + totalScore + "."
-        + " You had " + wrongGuess + " wrong guesses."
-        + " Press space for the next question.";
+      // document.getElementById("playedSong").innerHTML = winLoseText 
+      //   + " Your score for this question is " + roundScore
+      //   + " and your total score so far is " + totalScore + "."
+      //   + " You had " + wrongGuess + " wrong guesses."
+      //   + " Press space for the next question.";
       songToPlay.src="";
       musicPlayer.load();
 
