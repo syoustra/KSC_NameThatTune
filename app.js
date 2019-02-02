@@ -300,7 +300,7 @@ function pauseSong() {
 
 
 addEventListener("keydown", function(event) {
-    if (event.key == " "){
+    if (event.key == "w"){
                 document.getElementById("splashScreen").style.display = "none";
         document.getElementById("gameScreen").style.visibility = "visible";
   
@@ -308,7 +308,7 @@ addEventListener("keydown", function(event) {
         }
   });
   addEventListener("keyup", function(event) {
-    if (event.key == " ")
+    if (event.key == "w")
       pauseSong();
   });
 
@@ -319,7 +319,7 @@ addEventListener("keydown", function(event) {
   // })
 
   addEventListener("keydown", function(event) {
-    if (event.key == "q")
+    if (event.key == "f")
       location.reload(true);
   })
 // -------------------------------------------------------------- MUSIC PLAYER------------------------//
@@ -334,17 +334,17 @@ addEventListener("keydown", function(event) {
 
     window.onkeydown = function(e) {
       switch (e.keyCode) {
-        case 49:
+        case 65:
         // alert('1');
         playerGuess = 1;
         checkGuess(1);
         break;
-        case 50:
+        case 83:
         // alert('2');
         playerGuess = 2;
         checkGuess(2);
         break;
-        case 51:
+        case 68:
         // alert('3');
         playerGuess = 3;
         checkGuess(3);
@@ -482,7 +482,7 @@ function moreQuestions() {
         removeElement("scoreStatus");
         removeElement("questionText");
 
-    document.getElementById("instructions").innerHTML = "Please press q to play again";
+    document.getElementById("instructions").innerHTML = "Please press the top red button to play again";
   }
 }
 
