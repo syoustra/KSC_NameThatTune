@@ -361,6 +361,8 @@ addEventListener("keydown", function(event) {
 
 //----------------------------START OF ACTUAL GAMEPLAY, PERHAPS???--------------------------------------//
 
+// document.documentElement.requestFullscreen();
+
 startGame();
 nextQuestion();
 function moreQuestions() {

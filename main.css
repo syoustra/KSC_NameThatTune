@@ -31,3 +31,21 @@ body::after {
 pre {
   margin: 0;
 }
+
+#splashScreen {
+/*  transform: scale(.8);*/
+  font-size: 1.0rem;
+  text-align: center;
+}
+
+#currentHighScore {
+  font-size: 2.3rem;
+}
+
+/*#instructions {
+  font-size: 1.5rem;
+}*/
+
+#gameScreen {
+  font-size: 2.0rem;
+}
