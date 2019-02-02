@@ -204,7 +204,7 @@ songTimer = 0;
 function playSong() {
   musicPlayer.play();
 
- document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
+ // document.getElementById("playerState").innerHTML = "Music is playing; click to pause";
   document.getElementById("timePlayed").style.visibility = "hidden";
       document.getElementById("choiceListingDiv").style.visibility = "hidden";
 }
@@ -212,12 +212,13 @@ function playSong() {
 function pauseSong() {
   musicPlayer.pause();
   songTimer = musicPlayer.currentTime;
+      // document.getElementById("playedSong").style.visibility = "hidden";
   
   document.getElementById("timePlayed").innerHTML = "You listened to this song for " + songTimer + " seconds.";
     document.getElementById("timePlayed").style.visibility = "visible";
     document.getElementById("choiceListingDiv").style.visibility = "visible";
 
-  document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
+  // document.getElementById("playerState").innerHTML = "Music is paused; click to continue playing";
 
 
   end();
@@ -225,9 +226,10 @@ function pauseSong() {
   
   roundScore = 100 - (Math.round(songTimer)) - (Math.round(timeDiff)) - (wrongGuess * 5);
   // totalScore = totalScore + roundScore;
-  document.getElementById("score").innerHTML = "Your elapsed time is " + timeDiff + " and your round score is " + roundScore;
+  // document.getElementById("score").innerHTML = "Your elapsed time is " + timeDiff + " and your score for this question so far is " + roundScore;
   // + " and your total score is " + totalScore;
 
+  document.getElementById("timePlayed").innerHTML = "Time Listened: " + songTimer + " || Time Spent:" + timeDiff + " || Wrong Guesses: " + wrongGuess + " || Question Score: " + roundScore;
 
 }
 
@@ -316,6 +318,7 @@ addEventListener("keydown", function(event) {
       winLoseText = "Oops, try again!"
       wrongGuess ++;
       console.log(winLoseText);
+                  // document.getElementById("playedSong").style.display = "inline";
             document.getElementById("playedSong").innerHTML = winLoseText;
             listenForKeypress();
 
