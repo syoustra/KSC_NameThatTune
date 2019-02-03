@@ -211,9 +211,9 @@ function nextQuestion() {
 
   document.getElementById("choiceListingDiv").style.visibility = "hidden";
 
-  document.getElementById("choice1").innerHTML = "RED ~ " + wrongSongs[0][0];
-  document.getElementById("choice2").innerHTML = "BLUE ~ " + wrongSongs[1][0];
-  document.getElementById("choice3").innerHTML = "GREEN ~ " + wrongSongs[2][0];
+  document.getElementById("choice1").innerHTML = "1 ~ " + wrongSongs[0][0];
+  document.getElementById("choice2").innerHTML = "2 ~ " + wrongSongs[1][0];
+  document.getElementById("choice3").innerHTML = "3 ~ " + wrongSongs[2][0];
     //---------------------------------CHANGE FOR NUMBER OF CHOICES----------------------------//
   // document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3][0];
 
@@ -300,7 +300,7 @@ function pauseSong() {
 
 
 addEventListener("keydown", function(event) {
-    if (event.key == "w"){
+    if (event.key == " "){
                 document.getElementById("splashScreen").style.display = "none";
         document.getElementById("gameScreen").style.visibility = "visible";
   
@@ -308,7 +308,7 @@ addEventListener("keydown", function(event) {
         }
   });
   addEventListener("keyup", function(event) {
-    if (event.key == "w")
+    if (event.key == " ")
       pauseSong();
   });
 
@@ -319,7 +319,7 @@ addEventListener("keydown", function(event) {
   // })
 
   addEventListener("keydown", function(event) {
-    if (event.key == "f")
+    if (event.key == "q")
       location.reload(true);
   })
 // -------------------------------------------------------------- MUSIC PLAYER------------------------//
@@ -334,17 +334,17 @@ addEventListener("keydown", function(event) {
 
     window.onkeydown = function(e) {
       switch (e.keyCode) {
-        case 65:
+        case 49:
         // alert('1');
         playerGuess = 1;
         checkGuess(1);
         break;
-        case 83:
+        case 50:
         // alert('2');
         playerGuess = 2;
         checkGuess(2);
         break;
-        case 68:
+        case 51:
         // alert('3');
         playerGuess = 3;
         checkGuess(3);
@@ -381,9 +381,9 @@ addEventListener("keydown", function(event) {
 
               songChoices = shuffle(wrongSongs);
   console.log("Options Seen By Player: " + songChoices.toString());
- document.getElementById("choice1").innerHTML = "RED ~ " + wrongSongs[0][0];
-  document.getElementById("choice2").innerHTML = "BLUE ~ " + wrongSongs[1][0];
-  document.getElementById("choice3").innerHTML = "GREEN ~ " + wrongSongs[2][0];
+ document.getElementById("choice1").innerHTML = "1 ~ " + wrongSongs[0][0];
+  document.getElementById("choice2").innerHTML = "2 ~ " + wrongSongs[1][0];
+  document.getElementById("choice3").innerHTML = "3 ~ " + wrongSongs[2][0];
     //---------------------------------CHANGE FOR NUMBER OF CHOICES----------------------------//
   // document.getElementById("choice4").innerHTML = "4. " + wrongSongs[3][0];
 
@@ -482,7 +482,7 @@ function moreQuestions() {
         removeElement("scoreStatus");
         removeElement("questionText");
 
-    document.getElementById("instructions").innerHTML = "Please press the top red button to play again";
+    document.getElementById("instructions").innerHTML = "Please press q to play again";
   }
 }
 
